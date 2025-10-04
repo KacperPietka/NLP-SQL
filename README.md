@@ -1,5 +1,3 @@
-# NLP-SQL
-
 # Natural Language to SQL with Local LLMs  
 
 **SQL-NLP** lets you ask questions in plain English and get accurate SQL queries — powered by **Ollama** and the **SQLCoder-7B-2** model.  
