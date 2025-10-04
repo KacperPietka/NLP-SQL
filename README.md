@@ -43,4 +43,4 @@ The **SQL-NLP** system transforms a natural language question into a fully execu
 ### Translate Results Back to Natural Language
 - The results from SQL execution are passed to the SQL → NLP model (optional module: SQL_TO_NLP_LLM.py).
 - The model summarizes or explains the output in plain language for the user.
-- ***Example: *** “The vendor with the highest performance in 2024 is Acme Corp, with a score of 97.”
+- ***EXAMPLE*** “The vendor with the highest performance in 2024 is Acme Corp, with a score of 97.”
