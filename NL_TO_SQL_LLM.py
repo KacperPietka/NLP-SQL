@@ -1,17 +1,20 @@
 import json
 import requests
 
-from NL_SQL_PROMPT import PROMPT
 
 class NLToSQLModel:
-    def __init__(self, question, schema):
+    def __init__(self, question, schema, context):
         self.schema = schema
+        self.context = context
         self.question = question
         self.full_prompt = f"""
-        You are an expert SQL query generator. Generate a SQL query based strictly on the schema provided below.
+        You are an expert SQL query generator. Generate a SQL query based strictly on the schema and context provided below.
 
         Schema:
         {self.schema}
+
+        Context:
+        {self.context}
 
         User Question:
         {self.question}
@@ -41,8 +44,13 @@ if __name__ == "__main__":
     Table vendors(id, name, performance_score, year)
     Table sales(id, vendor_id, amount, date)
     """
+    context = """
+    Relevant tables: vendors, sales
+    vendors.name = vendor name
+    vendors.performance_score = performance metric per year
+    """
     question = "Which vendor had the highest performance in 2024?"
 
-    model = NLToSQLModel(question, schema)
+    model = NLToSQLModel(question, schema, context)
     sql_query = model.run()
     print("Generated SQL:", sql_query)
