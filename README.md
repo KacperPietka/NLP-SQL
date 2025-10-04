@@ -11,3 +11,6 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 - Schema-aware SQL generation using Chroma vector search  
 - ChatGPT-style desktop GUI built with PyQt 6  
 - SQLite / dbt-style schema integration
+
+## GUI
+![alt text]({B940221E-C8E8-435B-8DF3-9AEBA0616E75}.png)
