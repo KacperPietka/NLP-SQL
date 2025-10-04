@@ -13,8 +13,6 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 - SQLite / dbt-style schema integration
 
 ## Workflow  
-
-The **SQL-NLP** system transforms a natural language question into a fully executable SQL query through four key stages:
 ---
 ### Schema Embedding  
 - The database schema (from `.yml` or `.sql` files) is **embedded** into a **Chroma vector database**.  
