@@ -38,19 +38,3 @@ class NLToSQLModel:
             return data["response"].strip()
         else:
             raise Exception(f"Ollama API error: {response.text}")
-        
-if __name__ == "__main__":
-    schema = """
-    Table vendors(id, name, performance_score, year)
-    Table sales(id, vendor_id, amount, date)
-    """
-    context = """
-    Relevant tables: vendors, sales
-    vendors.name = vendor name
-    vendors.performance_score = performance metric per year
-    """
-    question = "Which vendor had the highest performance in 2024?"
-
-    model = NLToSQLModel(question, schema, context)
-    sql_query = model.run()
-    print("Generated SQL:", sql_query)
