@@ -3,3 +3,6 @@ __pycache__/
 
 # Project notes
 todolist.md
+
+# 🧠 Chroma vector database
+chroma_data/
