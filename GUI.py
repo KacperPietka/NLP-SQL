@@ -62,15 +62,12 @@ class ChatWindow(QWidget):
 
         self.chat_display.append(f"<b>You:</b> {question}")
         self.history_list.addItem(question)
-
-        # Example reply
-        sql = "SELECT * FROM xyz"
-        answer = "EXAMPLE"
-        self.chat_display.append(f"<b>Assistant:</b> SQL → `{sql}`<br>{answer}")
-
         self.input_bar.clear()
 
-app = QApplication(sys.argv)
-window = ChatWindow()
-window.show()
-sys.exit(app.exec())
+        try:
+            sql_query, context = generate_sql_from_question(question)
+            self.chat_display.append(f"<b>Assistant:</b><br>SQL → <code>{sql_query}</code><br><br>")
+        except Exception as e:
+            self.chat_display.append(f"<b>Assistant:</b> ❌ Error: {str(e)}")
+
+        
