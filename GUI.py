@@ -95,7 +95,7 @@ class ChatWindow(QWidget):
             self.chat_display.append(
                 f"""
                 <div style="margin-top:10px; margin-bottom:10px; color:white;">
-                    <b style="color:#00b4d8;">Assistant: Sure here you are!</b>
+                    <b style="color:#00b4d8;">Assistant:</b> Sure, here you are!
                     <div>
                         <b>SQL Query:
                         <pre style="color:#00ff99; font-family:Consolas, monospace; white-space:pre-wrap; margin:4px 0;">{clean_sql}</pre>

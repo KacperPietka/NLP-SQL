@@ -10,8 +10,7 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 - ChatGPT-style desktop GUI built with PyQt 6  
 - SQLite / dbt-style schema integration
 
-![alt text]({F0AE1D14-4165-4B01-A431-807FE1ED70C2}.png)
-
+![alt text]({1846AD66-8CB1-48B8-84BD-C8B678DE9A6B}.png)
 
 ## Workflow  
 ---
