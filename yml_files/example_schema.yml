@@ -1,0 +1,23 @@
+version: 2
+models:
+- name: vendors
+  description: Vendor performance and business data.
+  columns:
+  - name: id
+    description: Unique vendor identifier.
+  - name: vendor_name
+    description: Name of the vendor company.
+  - name: country
+    description: Country where the vendor operates.
+  - name: revenue
+    description: Annual revenue of the vendor in USD.
+  - name: year
+    description: Year of the recorded data.
+  - name: num_employees
+    description: Number of employees in the vendor company.
+  - name: industry
+    description: Industry category of the vendor.
+  - name: satisfaction_score
+    description: Customer satisfaction rating (1-10).
+  - name: contract_type
+    description: Type of vendor contract.
