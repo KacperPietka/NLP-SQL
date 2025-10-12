@@ -17,7 +17,7 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 ## Workflow  
 ---
 ### Schema Embedding  
-- The database schema (from `.yml` or `.sql` files) is **embedded** into a **Chroma vector database**.  
+- The database schema (from `.yml` files) is **embedded** into a **Chroma vector database**.  
 - Each **table**, **column**, and **relationship** description is converted into a vector representation using text embeddings.  
 - This makes the schema **searchable semantically** — the system can find the most relevant parts of the schema for any question.  
 ---
