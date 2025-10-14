@@ -40,7 +40,7 @@ class SQLResultExplainer:
         }
 
     def run(self):
-        response = requests.post("http://localhost:11434/api/generate", json=self.payload)
+        response = requests.post("http://localhost:11434/api/generate", json=self.payload, timeout=180)
         if response.status_code == 200:
             return response.json().get("response", "").strip()
         else:

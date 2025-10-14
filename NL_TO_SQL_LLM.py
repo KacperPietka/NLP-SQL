@@ -23,16 +23,17 @@ class NLToSQLModel:
         - Only use the tables and columns in the schema.
         - Never invent new tables or columns.
         - Return only the SQL query — no explanations or text.
+        - For selecting everything from the table use 'SELECT *'
 
         SQL:
         """
         self.payload = {
-            "model": "hf.co/defog/sqlcoder-7b-2:Q5_K_M",
+            "model": "mistral",
             "prompt": self.full_prompt,
             "stream": False 
         }
     def run(self):
-        response = requests.post("http://localhost:11434/api/generate", json=self.payload)
+        response = requests.post("http://localhost:11434/api/generate", json=self.payload, timeout=180)
         if response.status_code == 200:
             data = response.json()
             return data["response"].strip()

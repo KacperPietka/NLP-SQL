@@ -11,8 +11,9 @@ from SQL_Result_explainer import SQLResultExplainer
 
 
 class ChatWindow(QWidget):
-    def __init__(self, schema_manager):
+    def __init__(self, schema_manager, db_files):
         super().__init__()
+        self.db_files = db_files or []
         self.schema_manager = schema_manager
         self.setWindowTitle("SQL-NLP Chat")
         self.resize(800, 600)
@@ -25,7 +26,8 @@ class ChatWindow(QWidget):
         # Sidebar (History)
         self.history_list = QListWidget()
         label_history = QLabel("🗂️ Last Questions")
-        label_font = QFont("Segoe UI", 11, QFont.Weight.Bold)
+        label_font = QFont()
+        label_font.setBold(True)
         label_history.setFont(label_font)
         sidebar.addWidget(label_history)
         sidebar.addWidget(self.history_list)
@@ -33,9 +35,6 @@ class ChatWindow(QWidget):
         # Chat display
         self.chat_display = QTextEdit()
         self.chat_display.setReadOnly(True)
-        chat_font = QFont("Segoe UI", 11)
-        chat_font.setBold(True)  # 🔥 make all chat text bold
-        self.chat_display.setFont(chat_font)
         chat_area_label = QLabel("💬 SQL-NLP Chat Assistant")
         chat_area_label.setFont(label_font)
         chat_area.addWidget(chat_area_label)
@@ -46,11 +45,9 @@ class ChatWindow(QWidget):
 
         self.input_bar = QLineEdit()
         self.input_bar.setPlaceholderText("Ask a question about your data...")
-        self.input_bar.setFont(QFont("Segoe UI", 12))
         self.input_bar.setMinimumHeight(40)
 
         self.send_button = QPushButton("SEND")
-        self.send_button.setFont(QFont("Segoe UI", 11))
         self.send_button.setFixedHeight(40)
         self.send_button.setFixedWidth(100)
 
