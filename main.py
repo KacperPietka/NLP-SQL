@@ -20,11 +20,11 @@ class AppController:
         for yml_file in yml_files:
             try:
                 self.schema_manager.add_yml(yml_file)
-                print(f"✅ Added schema: {yml_file}")
+                #print(f"✅ Added schema: {yml_file}")
             except Exception as e:
                 print(f"⚠️ Could not add {yml_file}: {e}")
 
-        print("✅ All schemas loaded into ChromaDB.")
+        #print("✅ All schemas loaded into ChromaDB.")
 
         # Close setup window and open chat
         self.setup_window.close()
