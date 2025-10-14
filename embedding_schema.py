@@ -40,12 +40,12 @@ class ChromaSchemaManager:
         self.collection.add(documents=chunks,embeddings=embeddings,ids=ids,metadatas=metadatas)
         return
 
-    def get_context(self, query_text, n_results=3):
+    def get_context(self, query_text, n_results=1):
         query_embedding = self.embedder.encode([query_text]).tolist()
         results = self.collection.query(query_embeddings=query_embedding, n_results=n_results)
         return results
 
-    def get_schema(self, question, n_results=3):
+    def get_schema(self, question, n_results=1):
         results = self.get_context(question, n_results)
         docs = results["documents"][0]
         schema_parts = [doc for doc in docs if any(k in doc.lower() for k in ["table", "model", "columns", "schema"])]

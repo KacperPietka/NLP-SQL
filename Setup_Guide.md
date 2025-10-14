@@ -7,7 +7,6 @@
 ---
 3. Pull the necessary models:<br>
 **ollama pull mistral**<br>
-**ollama pull defog/sqlcoder-7b-2**
 ---
 4. Ready to go! Now just run the following command in the project directory<br>
 **python main.py**<br>

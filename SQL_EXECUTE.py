@@ -5,7 +5,7 @@ def execute_sql_query(sql_query):
     """
     Executes a SQL query on example.db and returns the results as a JSON string.
     """
-    conn = sqlite3.connect("example.db")
+    conn = sqlite3.connect("databases/example.db")
     conn.row_factory = sqlite3.Row  # Makes rows behave like dicts
     cursor = conn.cursor()
 
