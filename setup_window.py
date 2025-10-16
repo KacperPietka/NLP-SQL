@@ -20,7 +20,7 @@ class SetupWindow(QWidget):
 
         self.upload_yml_btn = QPushButton("Upload YAML Schema Files")
         self.upload_db_btn = QPushButton("Upload Database Files (.db)")
-        self.start_btn = QPushButton("🚀 Start App")
+        self.start_btn = QPushButton("OK")
 
         layout.addWidget(QLabel("Schema Files"))
         layout.addWidget(self.yml_list)
