@@ -1,6 +1,6 @@
 # Natural Language to SQL with Local LLMs  
 
-**SQL-NLP** lets you ask questions in plain English and get accurate SQL queries — powered by **Ollama** and the **SQLCoder-7B-2** model.  
+**SQL-NLP** lets you ask questions in plain English and get accurate SQL queries and insights by using **Ollama** and the **Mistral** model.  
 The system retrieves relevant database schema information from **ChromaDB** and generates correct SQL that can be executed on your local database.  
 
 ## Features  
@@ -29,18 +29,18 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 ---
 ### SQL Generation  
 - The retrieved schema context and user question are inserted into a **prompt template**. 
-- This full prompt is then sent to the **SQLCoder-7B-2 model** running locally via **Ollama**.  
+- This full prompt is then sent to the **Mistral model** running locally via **Ollama**.  
 - The model generates a **syntactically correct SQL query**, following strict rules:
   - Use only existing tables and columns  
   - Prefer explicit JOINs  
   - No commentary, just clean SQL 
 ---
 ### Execute SQL
-- The generated SQL query is executed on the local SQLite (or any configured) database.
+- The generated SQL query is executed on the local database.
 - Execution can be handled through the SQL_EXECUTE.py module.
 - The resulting data is returned as a structured dataset (rows and columns).
 ---
 ### Translate Results Back to Natural Language
-- The results from SQL execution are passed to the SQL → NLP model (optional module: SQL_TO_NLP_LLM.py).
+- The results from SQL execution are passed to the SQL → NLP model.
 - The model summarizes or explains the output in plain language for the user.
 - ***EXAMPLE*** “The vendor with the highest performance in 2024 is Acme Corp, with a score of 97.”
