@@ -106,11 +106,11 @@ class ChatWindow(QWidget):
         for yml_file in yml_files:
             try:
                 self.schema_manager.add_yml(yml_file)
-                self.chat_display.append(f"<b>✅ Added schema:</b> {yml_file}")
+                self.chat_display.append(f"<b>Loaded {len(yml_files)} yml files.</b>")
             except Exception as e:
-                self.chat_display.append(f"<b>⚠️ Failed to add:</b> {yml_file} ({e})")
+                self.chat_display.append(f"<b>Failed to add:</b> {yml_file} ({e})")
         self.db_files = db_files
-        self.chat_display.append(f"<b>📂 Loaded {len(db_files)} database files.</b>")
+        self.chat_display.append(f"<b> Loaded {len(db_files)} database files.</b>")
         self.setup_window.close()
 
 
