@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import (
     QTextEdit, QLineEdit, QPushButton, QListWidget, QLabel
 )
 from PyQt6.QtGui import QFont
+from setup_window import SetupWindow
 from html import escape
 import os
 from NL_TO_SQL_LLM import NLToSQLModel
@@ -26,6 +27,7 @@ class ChatWindow(QWidget):
         # Uploading button
         self.upload_button = QPushButton("Upload files")
         self.upload_button.setFixedHeight(45)
+        self.upload_button.clicked.connect(self.upload_files)
 
         # Sidebar (History)
         self.history_list = QListWidget()
@@ -94,7 +96,23 @@ class ChatWindow(QWidget):
         )
     
     def upload_files(self):
-        
+        """Open the SetupWindow to upload YAML and DB files."""
+        self.setup_window = SetupWindow()
+        self.setup_window.setup_complete.connect(self.on_files_uploaded)
+        self.setup_window.show()
+
+    def on_files_uploaded(self, yml_files, db_files):
+        """Triggered after user uploads files in the setup window."""
+        for yml_file in yml_files:
+            try:
+                self.schema_manager.add_yml(yml_file)
+                self.chat_display.append(f"<b>✅ Added schema:</b> {yml_file}")
+            except Exception as e:
+                self.chat_display.append(f"<b>⚠️ Failed to add:</b> {yml_file} ({e})")
+        self.db_files = db_files
+        self.chat_display.append(f"<b>📂 Loaded {len(db_files)} database files.</b>")
+        self.setup_window.close()
+
 
     def send_message(self):
         question = self.input_bar.text().strip()
