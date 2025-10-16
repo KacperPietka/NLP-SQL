@@ -23,6 +23,10 @@ class ChatWindow(QWidget):
         sidebar = QVBoxLayout()
         chat_area = QVBoxLayout()
 
+        # Uploading button
+        self.upload_button = QPushButton("Upload files")
+        self.upload_button.setFixedHeight(45)
+
         # Sidebar (History)
         self.history_list = QListWidget()
         label_history = QLabel("🗂️ Last Questions")
@@ -31,6 +35,7 @@ class ChatWindow(QWidget):
         label_history.setFont(label_font)
         sidebar.addWidget(label_history)
         sidebar.addWidget(self.history_list)
+        sidebar.addWidget(self.upload_button)
 
         # Chat display
         self.chat_display = QTextEdit()
@@ -43,13 +48,15 @@ class ChatWindow(QWidget):
         # Input row (QLineEdit + Send button)
         input_row = QHBoxLayout()
 
+
         self.input_bar = QLineEdit()
         self.input_bar.setPlaceholderText("Ask a question about your data...")
         self.input_bar.setMinimumHeight(40)
 
-        self.send_button = QPushButton("SEND")
-        self.send_button.setFixedHeight(40)
+        self.send_button = QPushButton("Send")
+        self.send_button.setFixedHeight(45)
         self.send_button.setFixedWidth(100)
+
 
         input_row.addWidget(self.input_bar, stretch=1)
         input_row.addWidget(self.send_button)
@@ -64,6 +71,30 @@ class ChatWindow(QWidget):
         # Connect button
         self.send_button.clicked.connect(self.send_message)
         self.input_bar.returnPressed.connect(self.send_message)  # Press Enter to send
+
+        # Styling the push buttons and the input bar
+        self.setStyleSheet("""    
+        QPushButton {
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        border-radius: 8px;
+        background-color: grey;
+        }
+
+        QPushButton:hover {
+            background-color: #90EE90;
+        }
+
+        QLineEdit {
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        """
+        )
+    
+    def upload_files(self):
+        
 
     def send_message(self):
         question = self.input_bar.text().strip()
@@ -92,7 +123,7 @@ class ChatWindow(QWidget):
             self.chat_display.append(
                 f"""
                 <div style="margin-top:10px; margin-bottom:10px; color:white;">
-                    <b style="color:#00b4d8;">Assistant:</b> Sure, here you are!
+                    <b style="color:#;">Assistant:</b> Sure, here you are!
                     <div>
                         <b>SQL Query:
                         <pre style="color:#00ff99; font-family:Consolas, monospace; white-space:pre-wrap; margin:4px 0;">{clean_sql}</pre>
