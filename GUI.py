@@ -1,8 +1,9 @@
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
-    QTextEdit, QLineEdit, QPushButton, QListWidget, QLabel
+    QTextEdit, QLineEdit, QPushButton, QListWidget, QLabel, QDialog
 )
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QTextCursor, QTextBlockFormat
+from PyQt6.QtCore import Qt
 from setup_window import SetupWindow
 from html import escape
 import os
@@ -18,6 +19,7 @@ class ChatWindow(QWidget):
         self.schema_manager = schema_manager
         self.setWindowTitle("SQL-NLP Chat")
         self.resize(800, 600)
+        self.current_files = []
 
         # Layouts
         main_layout = QHBoxLayout()
@@ -29,9 +31,14 @@ class ChatWindow(QWidget):
         self.upload_button.setFixedHeight(45)
         self.upload_button.clicked.connect(self.upload_files)
 
+        # Current list
+        self.current_list_display = QPushButton("Current files")
+        self.current_list_display.setFixedHeight(30)
+        self.current_list_display.clicked.connect(self.display_current_files)
+
         # Sidebar (History)
         self.history_list = QListWidget()
-        label_history = QLabel("🗂️ Last Questions")
+        label_history = QLabel("Last Questions")
         label_font = QFont()
         label_font.setBold(True)
         label_history.setFont(label_font)
@@ -39,12 +46,19 @@ class ChatWindow(QWidget):
         sidebar.addWidget(self.history_list)
         sidebar.addWidget(self.upload_button)
 
+        # Chat area header (label + "Current files" button aligned right)
+        chat_header = QHBoxLayout()
+        chat_area_label = QLabel("SQL-NLP Chat Assistant")
+        chat_area_label.setFont(label_font)
+        chat_header.addWidget(chat_area_label)
+        chat_header.addStretch()  # pushes the button to the right
+        chat_header.addWidget(self.current_list_display)
+        chat_area.addLayout(chat_header)
+
+
         # Chat display
         self.chat_display = QTextEdit()
         self.chat_display.setReadOnly(True)
-        chat_area_label = QLabel("💬 SQL-NLP Chat Assistant")
-        chat_area_label.setFont(label_font)
-        chat_area.addWidget(chat_area_label)
         chat_area.addWidget(self.chat_display)
 
         # Input row (QLineEdit + Send button)
@@ -75,25 +89,49 @@ class ChatWindow(QWidget):
         self.input_bar.returnPressed.connect(self.send_message)  # Press Enter to send
 
         # Styling the push buttons and the input bar
-        self.setStyleSheet("""    
+        self.setStyleSheet("""
+        QWidget {
+            background-color: #1e1e1e;  /* dark background */
+            color: white;
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif;
+        }
+
+        QTextEdit {
+            background-color: #2b2b2b;
+            border: 1px solid #3a3a3a;
+            border-radius: 8px;
+            padding: 6px;
+        }
+
+        QListWidget {
+            background-color: #2b2b2b;
+            border: 1px solid #3a3a3a;
+            border-radius: 8px;
+            padding: 4px;
+        }
+
         QPushButton {
-        font-size: 15px;
-        font-weight: bold;
-        color: white;
-        border-radius: 8px;
-        background-color: grey;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            border-radius: 8px;
+            background-color: #3a3a3a;
+            padding: 8px 12px;
         }
 
         QPushButton:hover {
-            background-color: #90EE90;
+            background-color: rgba(255, 255, 255, 0.05);
         }
 
         QLineEdit {
+            background-color: #2b2b2b;
+            color: white;
+            border: 1px solid #3a3a3a;
             border-radius: 8px;
-            font-size: 15px;
+            padding: 6px;
         }
-        """
-        )
+""")
+
     
     def upload_files(self):
         """Open the SetupWindow to upload YAML and DB files."""
@@ -112,6 +150,31 @@ class ChatWindow(QWidget):
         self.db_files = db_files
         self.chat_display.append(f"<b> Loaded {len(db_files)} database files.</b>")
         self.setup_window.close()
+    
+    def display_current_files(self):
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Current Files")
+        dialog.resize(400, 300)
+
+        layout = QVBoxLayout(dialog)
+        list_widget = QListWidget()
+
+        # Add files
+        if os.path.exists("databases"):
+            for f in os.listdir("databases"):
+                list_widget.addItem(f"DB: {f}")
+        if os.path.exists("yml_files"):
+            for f in os.listdir("yml_files"):
+                list_widget.addItem(f"YML: {f}")
+
+        # Close button
+        close_button = QPushButton("Close")
+        close_button.clicked.connect(dialog.close)
+
+        layout.addWidget(list_widget)
+        layout.addWidget(close_button)
+
+        dialog.exec()
 
 
     def send_message(self):
@@ -119,7 +182,6 @@ class ChatWindow(QWidget):
         if not question:
             return
 
-        self.chat_display.append(f"<b>You:</b> {question}")
         self.history_list.addItem(question)
         self.input_bar.clear()
 
@@ -138,23 +200,24 @@ class ChatWindow(QWidget):
             clean_sql = escape(sql_query)
             clean_explanation = escape(interpretation)
 
-            self.chat_display.append(
-                f"""
-                <div style="margin-top:10px; margin-bottom:10px; color:white;">
-                    <b style="color:#;">Assistant:</b> Sure, here you are!
-                    <div>
-                        <b>SQL Query:
-                        <pre style="color:#00ff99; font-family:Consolas, monospace; white-space:pre-wrap; margin:4px 0;">{clean_sql}</pre>
-                        <br></br>
-                        <b>Explanation:
-                        <div style="color:white; line-height:1.4; margin-top:4px;">
-                            {clean_explanation}
-                        </div>
-                        <br></br>
-                    </div>
-                </div>
-                """
-            )
+             # --- USER MESSAGE (right aligned) ---
+            cursor = self.chat_display.textCursor()
+            user_format = QTextBlockFormat()
+            user_format.setAlignment(Qt.AlignmentFlag.AlignRight)
+            cursor.insertBlock(user_format)
+            cursor.insertHtml(f"<span style='color:#00b4d8;'><b>You:</b> {question}</span>")
+
+            cursor.insertHtml("<br>") 
+
+            # --- ASSISTANT MESSAGE (left aligned) ---
+            bot_format = QTextBlockFormat()
+            bot_format.setAlignment(Qt.AlignmentFlag.AlignLeft)
+            cursor.insertBlock(bot_format)
+            cursor.insertHtml(f"<span style='color:#ffffff;'>{clean_explanation}</span>")
+
+            self.chat_display.setTextCursor(cursor)
+            cursor.insertHtml("<br>") 
+
         except Exception as e:
             self.chat_display.append(f"<b>Assistant:</b> ❌ Error: {str(e)}")
 

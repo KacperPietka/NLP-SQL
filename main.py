@@ -1,5 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication
+from PyQt6.QtGui import QFont
 from setup_window import SetupWindow
 from embedding_schema import ChromaSchemaManager
 from GUI import ChatWindow
@@ -7,6 +8,7 @@ from GUI import ChatWindow
 class AppController:
     def __init__(self):
         self.app = QApplication(sys.argv)
+        self.app.setFont(QFont("Inter"))
         self.schema_manager = ChromaSchemaManager()
         self.chat_window = ChatWindow(self.schema_manager, db_files=[])
         self.chat_window.show()
