@@ -9,3 +9,9 @@ chroma_data/
 
 # file for testing
 test.py
+
+# Databases
+databases/
+
+# yml_files
+yml_files/
