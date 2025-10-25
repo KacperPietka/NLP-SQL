@@ -25,11 +25,6 @@ class ChatWindow(QWidget):
         sidebar = QVBoxLayout()
         chat_area = QVBoxLayout()
 
-        # Connect to Snowflake button
-        self.snowflake = QPushButton("Connect to Snowflake")
-        self.snowflake.setFixedHeight(45)
-        self.snowflake.clicked.connect(self.open_snowflake_window)
-        sidebar.addWidget(self.snowflake)
 
         # --- Sidebar (Tables) ---
         self.tables_list = QListWidget()
@@ -37,9 +32,14 @@ class ChatWindow(QWidget):
         label_font = QFont()
         label_font.setBold(True)
         label_tables.setFont(label_font)
-
         sidebar.addWidget(label_tables)
         sidebar.addWidget(self.tables_list)
+
+        # Connect to Snowflake button
+        self.snowflake = QPushButton("Connect to Snowflake")
+        self.snowflake.setFixedHeight(45)
+        self.snowflake.clicked.connect(self.open_snowflake_window)
+        sidebar.addWidget(self.snowflake)
 
         # Chat area header (label + "Current files" button aligned right)
         chat_header = QHBoxLayout()
