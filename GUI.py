@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
     QTextEdit, QLineEdit, QPushButton, QListWidget, QLabel, QDialog, QComboBox
 )
+from PyQt6 import QtGui, QtCore
 from PyQt6.QtGui import QFont, QTextCursor, QTextBlockFormat
 from PyQt6.QtCore import Qt
 from html import escape
@@ -36,10 +37,22 @@ class ChatWindow(QWidget):
         sidebar.addWidget(self.tables_list)
 
         # Connect to Snowflake button
-        self.snowflake = QPushButton("Connect to Snowflake")
+        self.snowflake = QPushButton("Connect")
+        self.snowflake.setIcon(QtGui.QIcon('Images/snowflake_icon.png'))
+        self.snowflake.setIconSize(QtCore.QSize(20,20))
+        self.snowflake.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
         self.snowflake.setFixedHeight(45)
         self.snowflake.clicked.connect(self.open_snowflake_window)
         sidebar.addWidget(self.snowflake)
+
+        self.snowflake.setStyleSheet("""
+            QPushButton {
+            text-align: left;   
+            padding-left: 40px;
+            padding-right: 30px;
+            }
+        """)
+
 
         # Chat area header (label + "Current files" button aligned right)
         chat_header = QHBoxLayout()
@@ -111,7 +124,6 @@ class ChatWindow(QWidget):
             color: white;
             border-radius: 8px;
             background-color: #3a3a3a;
-            padding: 8px 12px;
         }
 
         QPushButton:hover {
