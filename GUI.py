@@ -4,23 +4,21 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtGui import QFont, QTextCursor, QTextBlockFormat
 from PyQt6.QtCore import Qt
-from setup_window import SetupWindow
 from html import escape
 import os
 from NL_TO_SQL_LLM import NLToSQLModel
 from SQL_EXECUTE import execute_sql_query
 from SQL_Result_explainer import SQLResultExplainer
 from Snowflake_connector import SnowflakeConnectWindow
+from embedding_schema import ChromaSchemaManager
 
 
 class ChatWindow(QWidget):
-    def __init__(self, schema_manager, db_files):
+    def __init__(self):
         super().__init__()
-        self.db_files = db_files or []
-        self.schema_manager = schema_manager
         self.setWindowTitle("SQL-NLP Chat")
         self.resize(800, 600)
-        self.current_files = []
+        self.schema_manager = ChromaSchemaManager()
 
         # Layouts
         main_layout = QHBoxLayout()
@@ -133,6 +131,14 @@ class ChatWindow(QWidget):
     def open_snowflake_window(self):
         dialog = SnowflakeConnectWindow()
         dialog.exec()
+        self.schema_manager.add_snowflake_schema(
+            dialog.user.text(),
+            dialog.password.text(),
+            dialog.account.text(),
+            dialog.warehouse.text(),
+            dialog.database.text(),
+            dialog.schema.text()
+        )
 
     def send_message(self):
         question = self.input_bar.text().strip()
@@ -142,7 +148,6 @@ class ChatWindow(QWidget):
         self.input_bar.clear()
 
         try:
-            # Retrieve schema + context
             context = self.schema_manager.get_context(question)
             schema = self.schema_manager.get_schema(question)
             nl_to_sql_model = NLToSQLModel(question, schema, context)

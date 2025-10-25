@@ -3,6 +3,7 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import QSettings
 import snowflake.connector
+from embedding_schema import ChromaSchemaManager
 
 class SnowflakeConnectWindow(QDialog):
     def __init__(self):
@@ -64,8 +65,7 @@ class SnowflakeConnectWindow(QDialog):
             )
             cur = conn.cursor()
             cur.execute("SELECT CURRENT_VERSION();")
-            version = cur.fetchone()[0]
-            QMessageBox.information(self, "Success", f"✅ Connected to Snowflake!\nVersion: {version}")
+            QMessageBox.information(self, "Success", f"✅ Connected to Snowflake!")
 
             # --- Save credentials ---
             self.settings.setValue("account", self.account.text())
@@ -75,8 +75,9 @@ class SnowflakeConnectWindow(QDialog):
             self.settings.setValue("database", self.database.text())
             self.settings.setValue("schema", self.schema.text())
 
+
             cur.close()
             conn.close()
             self.accept()
         except Exception as e:
-            QMessageBox.critical(self, "Connection failed", f"❌ {e}")
+            QMessageBox.critical(None, "Connection failed", f"❌ {e}")
