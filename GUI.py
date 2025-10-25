@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QHBoxLayout,
-    QTextEdit, QLineEdit, QPushButton, QListWidget, QLabel, QDialog
+    QTextEdit, QLineEdit, QPushButton, QListWidget, QLabel, QDialog, QComboBox
 )
 from PyQt6.QtGui import QFont, QTextCursor, QTextBlockFormat
 from PyQt6.QtCore import Qt
@@ -10,6 +10,7 @@ import os
 from NL_TO_SQL_LLM import NLToSQLModel
 from SQL_EXECUTE import execute_sql_query
 from SQL_Result_explainer import SQLResultExplainer
+from Snowflake_connector import SnowflakeConnectWindow
 
 
 class ChatWindow(QWidget):
@@ -26,25 +27,21 @@ class ChatWindow(QWidget):
         sidebar = QVBoxLayout()
         chat_area = QVBoxLayout()
 
-        # Uploading button
-        self.upload_button = QPushButton("Upload files")
-        self.upload_button.setFixedHeight(45)
-        self.upload_button.clicked.connect(self.upload_files)
+        # Connect to Snowflake button
+        self.snowflake = QPushButton("Connect to Snowflake")
+        self.snowflake.setFixedHeight(45)
+        self.snowflake.clicked.connect(self.open_snowflake_window)
+        sidebar.addWidget(self.snowflake)
 
-        # Current list
-        self.current_list_display = QPushButton("Current files")
-        self.current_list_display.setFixedHeight(30)
-        self.current_list_display.clicked.connect(self.display_current_files)
-
-        # Sidebar (History)
-        self.history_list = QListWidget()
-        label_history = QLabel("Last Questions")
+        # --- Sidebar (Tables) ---
+        self.tables_list = QListWidget()
+        label_tables = QLabel("Available Tables")
         label_font = QFont()
         label_font.setBold(True)
-        label_history.setFont(label_font)
-        sidebar.addWidget(label_history)
-        sidebar.addWidget(self.history_list)
-        sidebar.addWidget(self.upload_button)
+        label_tables.setFont(label_font)
+
+        sidebar.addWidget(label_tables)
+        sidebar.addWidget(self.tables_list)
 
         # Chat area header (label + "Current files" button aligned right)
         chat_header = QHBoxLayout()
@@ -52,7 +49,6 @@ class ChatWindow(QWidget):
         chat_area_label.setFont(label_font)
         chat_header.addWidget(chat_area_label)
         chat_header.addStretch()  # pushes the button to the right
-        chat_header.addWidget(self.current_list_display)
         chat_area.addLayout(chat_header)
 
 
@@ -87,6 +83,7 @@ class ChatWindow(QWidget):
         # Connect button
         self.send_button.clicked.connect(self.send_message)
         self.input_bar.returnPressed.connect(self.send_message)  # Press Enter to send
+
 
         # Styling the push buttons and the input bar
         self.setStyleSheet("""
@@ -132,57 +129,16 @@ class ChatWindow(QWidget):
         }
 """)
 
-    
-    def upload_files(self):
-        """Open the SetupWindow to upload YAML and DB files."""
-        self.setup_window = SetupWindow()
-        self.setup_window.setup_complete.connect(self.on_files_uploaded)
-        self.setup_window.show()
 
-    def on_files_uploaded(self, yml_files, db_files):
-        """Triggered after user uploads files in the setup window."""
-        for yml_file in yml_files:
-            try:
-                self.schema_manager.add_yml(yml_file)
-                self.chat_display.append(f"<b>Loaded {len(yml_files)} yml files.</b>")
-            except Exception as e:
-                self.chat_display.append(f"<b>Failed to add:</b> {yml_file} ({e})")
-        self.db_files = db_files
-        self.chat_display.append(f"<b> Loaded {len(db_files)} database files.</b>")
-        self.setup_window.close()
-    
-    def display_current_files(self):
-        dialog = QDialog(self)
-        dialog.setWindowTitle("Current Files")
-        dialog.resize(400, 300)
-
-        layout = QVBoxLayout(dialog)
-        list_widget = QListWidget()
-
-        # Add files
-        if os.path.exists("databases"):
-            for f in os.listdir("databases"):
-                list_widget.addItem(f"DB: {f}")
-        if os.path.exists("yml_files"):
-            for f in os.listdir("yml_files"):
-                list_widget.addItem(f"YML: {f}")
-
-        # Close button
-        close_button = QPushButton("Close")
-        close_button.clicked.connect(dialog.close)
-
-        layout.addWidget(list_widget)
-        layout.addWidget(close_button)
-
+    def open_snowflake_window(self):
+        dialog = SnowflakeConnectWindow()
         dialog.exec()
-
 
     def send_message(self):
         question = self.input_bar.text().strip()
         if not question:
             return
 
-        self.history_list.addItem(question)
         self.input_bar.clear()
 
         try:

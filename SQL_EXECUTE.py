@@ -1,5 +1,7 @@
 import sqlite3
 import json
+import os
+
 
 def execute_sql_query(sql_query):
     """
