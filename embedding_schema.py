@@ -2,6 +2,7 @@ import chromadb
 import yaml
 import os
 from sentence_transformers import SentenceTransformer
+import snowflake.connector
 
 class ChromaSchemaManager:
     def __init__(self, data_dir="./chroma_data", collection_name="schema_collection", model_name="all-mpnet-base-v2"):
@@ -19,26 +20,44 @@ class ChromaSchemaManager:
             start += chunk_size - overlap
         return chunks
 
-    def add_yml(self, file_path: str):
-        if not file_path.endswith((".yml", ".yaml")):
-            raise ValueError("Only .yml or .yaml files are allowed.")
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"File not found: {file_path}")
 
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
+    def add_snowflake_schema(self, user, password, account, warehouse, database, schema):
+        """
+        Connects to Snowflake and embeds all table schemas (via DESCRIBE TABLE) into ChromaDB.
+        """
+        conn = snowflake.connector.connect(
+            user=user,
+            password=password,
+            account=account,
+            warehouse=warehouse,
+            database=database,
+            schema=schema
+        )
+        cur = conn.cursor()
 
-        text = yaml.dump(data)
+        try:
+            # Get all tables in schema
+            cur.execute(f"SHOW TABLES IN SCHEMA {database}.{schema}")
+            tables = [row[1] for row in cur.fetchall()]
 
-        chunks = self._chunk_text(text)
-        embeddings = self.embedder.encode(chunks).tolist()
+            for t in tables:
+                cur.execute(f"DESCRIBE TABLE {database}.{schema}.{t}")
+                rows = cur.fetchall()
 
-        file_id = os.path.basename(file_path)
-        ids = [f"{file_id}_chunk_{i}" for i in range(len(chunks))]
-        metadatas = [{"source": file_id, "chunk_index": i} for i in range(len(chunks))]
-                     
-        self.collection.add(documents=chunks,embeddings=embeddings,ids=ids,metadatas=metadatas)
-        return
+                # Build a text representation of schema
+                schema_text = f"Table: {t}\n"
+                schema_text += "\n".join([f"  {r[0]} ({r[1]})" for r in rows])
+
+                chunks = self._chunk_text(schema_text)
+                embeddings = self.embedder.encode(chunks).tolist()
+                ids = [f"{t}_chunk_{i}" for i in range(len(chunks))]
+                metadatas = [{"source": t, "chunk_index": i, "type": "snowflake_table"} for i in range(len(chunks))]
+
+                self.collection.add(documents=chunks, embeddings=embeddings, ids=ids, metadatas=metadatas)
+
+        finally:
+            cur.close()
+            conn.close()
 
     def get_context(self, query_text, n_results=1):
         query_embedding = self.embedder.encode([query_text]).tolist()

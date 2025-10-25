@@ -1,28 +1,52 @@
-import sqlite3
 import json
-import os
-
+import snowflake.connector
+from PyQt6.QtCore import QSettings
 
 def execute_sql_query(sql_query):
     """
-    Executes a SQL query on example.db and returns the results as a JSON string.
+    Executes a SQL query on the user's connected Snowflake account
+    and returns results as a JSON string.
     """
-    conn = sqlite3.connect("databases/example.db")
-    conn.row_factory = sqlite3.Row  # Makes rows behave like dicts
+
+    # --- Load saved connection info from QSettings ---
+    settings = QSettings("SQLNLPApp", "Snowflake")
+
+    user = settings.value("user")
+    password = settings.value("password")
+    account = settings.value("account")
+    warehouse = settings.value("warehouse")
+    database = settings.value("database")
+    schema = settings.value("schema")
+
+    if not all([user, password, account, warehouse, database, schema]):
+        raise Exception("❌ Missing Snowflake credentials. Please connect first.")
+
+    # --- Connect to Snowflake ---
+    conn = snowflake.connector.connect(
+        user=user,
+        password=password,
+        account=account,
+        warehouse=warehouse,
+        database=database,
+        schema=schema
+    )
+
     cursor = conn.cursor()
 
     try:
         cursor.execute(sql_query)
+        columns = [desc[0] for desc in cursor.description]
         rows = cursor.fetchall()
 
-        # Convert to list of dictionaries
-        results = [dict(row) for row in rows]
+        # Convert results to list of dicts
+        results = [dict(zip(columns, row)) for row in rows]
 
-        # Return pretty-formatted JSON
+        # Return as pretty JSON string
         return json.dumps(results, indent=2)
 
-    except sqlite3.Error as e:
-        raise Exception(f"SQL execution error: {e}")
+    except snowflake.connector.errors.ProgrammingError as e:
+        raise Exception(f"❌ Snowflake SQL error: {e}")
 
     finally:
+        cursor.close()
         conn.close()
