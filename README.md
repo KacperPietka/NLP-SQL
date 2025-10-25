@@ -11,7 +11,7 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 - SQLite / dbt-style schema integration
 
 
-![The App](GUI_example.png)
+![The App](Images/GUI_example.png)
 
 
 ## Workflow  
