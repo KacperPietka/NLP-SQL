@@ -10,6 +10,11 @@ class ChromaSchemaManager:
         self.collection = self.chroma_client.get_or_create_collection(name=collection_name)
         self.embedder = SentenceTransformer(model_name)
 
+    def reset_collection(self):
+        """Deletes and recreates the schema collection."""
+        self.chroma_client.delete_collection("schema_collection")
+        self.collection = self.chroma_client.get_or_create_collection(name="schema_collection")
+
     def _chunk_text(self, text: str, chunk_size: int = 1000, overlap: int = 100) -> list[str]:
         """Split long text into overlapping chunks (safe for transformer models)."""
         chunks = []
