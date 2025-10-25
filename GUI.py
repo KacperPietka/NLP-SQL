@@ -131,6 +131,7 @@ class ChatWindow(QWidget):
     def open_snowflake_window(self):
         dialog = SnowflakeConnectWindow()
         dialog.exec()
+        self.schema_manager.reset_collection()
         self.schema_manager.add_snowflake_schema(
             dialog.user.text(),
             dialog.password.text(),

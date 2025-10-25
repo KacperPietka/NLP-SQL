@@ -1,6 +1,12 @@
 import json
 import snowflake.connector
 from PyQt6.QtCore import QSettings
+import decimal
+
+def json_safe(obj):
+    if isinstance(obj, decimal.Decimal):
+        return float(obj)
+    raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
 
 def execute_sql_query(sql_query):
     """
@@ -42,7 +48,7 @@ def execute_sql_query(sql_query):
         results = [dict(zip(columns, row)) for row in rows]
 
         # Return as pretty JSON string
-        return json.dumps(results, indent=2)
+        return json.dumps(results, indent=2, default=json_safe)
 
     except snowflake.connector.errors.ProgrammingError as e:
         raise Exception(f"❌ Snowflake SQL error: {e}")
