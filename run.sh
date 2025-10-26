@@ -5,7 +5,7 @@ PID_FILE="/tmp/ollama_app.pid"
 
 if [[ "$arg" == "run" ]]; then
     if pgrep -f "ollama serve" >/dev/null; then
-        echo "Ollama already running"
+        continue
     else
         ollama serve > /dev/null 2>&1 &
         sleep 2  # give it a second to start
