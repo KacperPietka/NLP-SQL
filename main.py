@@ -13,10 +13,20 @@ class AppController:
         self.chat_window.show()
 
     def run(self):
-        sys.exit(self.app.exec())
+        # Run the GUI event loop
+        exit_code = self.app.exec()
+
+        # When user closes the window, stop Ollama
+        with open(os.devnull, 'wb') as devnull:
+            subprocess.Popen(['sh', 'run.sh', "exit"], stdout=devnull, stderr=devnull)
+
+        sys.exit(exit_code)
+
 
 if __name__ == "__main__":
+    # Start Ollama before launching GUI
     with open(os.devnull, 'wb') as devnull:
-        subprocess.Popen(['sh', 'run.sh'], stdout=devnull, stderr=devnull)
+        subprocess.Popen(['sh', 'run.sh', "run"], stdout=devnull, stderr=devnull)
+
     controller = AppController()
     controller.run()
