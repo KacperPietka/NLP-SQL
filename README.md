@@ -1,14 +1,13 @@
 # Natural Language to SQL with Local LLMs  
 
 **SQL-NLP** lets you ask questions in plain English and get accurate SQL queries and insights by using **Ollama** and the **Mistral** model.  
-The system retrieves relevant database schema information from **ChromaDB** and generates correct SQL that can be executed on your local database.  
+The system retrieves relevant database schema information from **ChromaDB** and generates correct SQL that is executed. Additionally, you can get insights from the executed queries.  
 
 ## Features  
 
-- Ask natural-language questions → get executable SQL 
+- Ask natural-language questions about your data 
 - Schema-aware SQL generation using Chroma vector search  
-- ChatGPT-style desktop GUI built with PyQt 6  
-- SQLite / dbt-style schema integration
+- ChatGPT-style desktop GUI built with PyQt6  
 
 
 ![The App](Images/GUI_example.png)
@@ -17,7 +16,7 @@ The system retrieves relevant database schema information from **ChromaDB** and 
 ## Workflow  
 ---
 ### Schema Embedding  
-- The database schema (from `.yml` files) is **embedded** into a **Chroma vector database**.  
+- The database schema is **embedded** into a **Chroma vector database**.  
 - Each **table**, **column**, and **relationship** description is converted into a vector representation using text embeddings.  
 - This makes the schema **searchable semantically** — the system can find the most relevant parts of the schema for any question.  
 ---
@@ -36,9 +35,8 @@ The system retrieves relevant database schema information from **ChromaDB** and 
   - No commentary, just clean SQL 
 ---
 ### Execute SQL
-- The generated SQL query is executed on the local database.
+- The generated SQL query is executed on the database.
 - Execution can be handled through the SQL_EXECUTE.py module.
-- The resulting data is returned as a structured dataset (rows and columns).
 ---
 ### Translate Results Back to Natural Language
 - The results from SQL execution are passed to the SQL → NLP model.
