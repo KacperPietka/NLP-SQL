@@ -1,5 +1,6 @@
 import sys
 import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QFont
 from GUI import ChatWindow
