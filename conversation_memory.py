@@ -4,8 +4,8 @@ import os
 class ChatMemory:
     def __init__(self, max_memory=5, file_path="memory.json"):
         self.max_memory = max_memory
-        self.conversation_memory = self.load_memory() ### make it a JSON file for now and then make it a PostgreSQL
         self.file_path = file_path
+        self.conversation_memory = self.load_memory() ### make it a JSON file for now and then make it a PostgreSQL
     
     def load_memory(self):
         """Load existing memory.json or return an empty list."""
