@@ -1,8 +1,0 @@
-[
-    {
-        "question": "Could you give me top vendor by revenue in 2020?",
-        "sql_query": "SELECT VENDOR_ID, SUM(REVENUE) as TotalRevenue\nFROM EXAMPLE\nWHERE YEAR = 2020\nGROUP BY VENDOR_ID\nORDER BY TotalRevenue DESC\nLIMIT 1;",
-        "results": "[\n  {\n    \"VENDOR_ID\": 93,\n    \"TOTALREVENUE\": 498810.92\n  }\n]",
-        "interpretation": "The top vendor by revenue in 2020 is Vendor ID 93, with a total revenue of $498,810.92. This indicates that Vendor ID 93 had the highest earnings among all vendors in the year 2020, as shown in the provided SQL query results."
-    }
-]

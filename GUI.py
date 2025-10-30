@@ -198,7 +198,3 @@ class ChatWindow(QWidget):
 
         except Exception as e:
             self.chat_display.append(f"<b>Assistant:</b> ❌ Error: {str(e)}")
-
-
-
-        

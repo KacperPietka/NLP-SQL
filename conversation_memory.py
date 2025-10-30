@@ -23,13 +23,14 @@ class ChatMemory:
         with open(self.file_path, 'w', encoding='utf-8') as f:
             json.dump([], f, indent=4)
     
-    def add_memory(self, question, sql_query, results, interpretation):
+    def add_memory(self, question, sql_query, results, interpretation, chat_id=0):
         """Adds memory to the conversation_memory and calls the save.json() function"""
         new_entry = {
-            "question": question,
-            "sql_query": sql_query,
-            "results": results,
-            "interpretation": interpretation
+                "chat_id": chat_id,
+                "question": question,
+                "sql_query": sql_query,
+                "results": results,
+                "interpretation": interpretation
         }
         # Avoid duplicates
         if not self.conversation_memory or self.conversation_memory[-1] != new_entry:
@@ -37,6 +38,7 @@ class ChatMemory:
             if len(self.conversation_memory) > self.max_memory:
                 self.conversation_memory = self.conversation_memory[-self.max_memory:]
             self.save_to_json()
+
     def save_to_json(self):
         """Save the current memory list to disk."""
         with open(self.file_path, 'w', encoding='utf-8') as f:
