@@ -1,0 +1,201 @@
+text,label
+show top 10 budget by performance.,sql_mode
+Can you visualize the forecast for this month?,sql_mode
+Find leads by country and department.,sql_mode
+explain all transactions from last quarter.,sql_mode
+Can you visualize the marketing for this month?,sql_mode
+Display website traffic data grouped by category.,sql_mode
+plot me total orders by region.,sql_mode
+Can you list the suppliers for this month?,sql_mode
+Please explain overall revenue trends.,sql_mode
+Can you compare the expenses for this month?,sql_mode
+compare me total customers by region.,sql_mode
+Can you compare the shipments for this month?,sql_mode
+show me total orders by region.,sql_mode
+Find marketing by country and department.,sql_mode
+Find inventory by country and department.,sql_mode
+Please visualize overall inventory trends.,sql_mode
+Display production costs data grouped by category.,sql_mode
+visualize top 10 budget by performance.,sql_mode
+list all customers from last quarter.,sql_mode
+Can you compare the budget for this month?,sql_mode
+Display profit data grouped by category.,sql_mode
+Display conversion rate data grouped by category.,sql_mode
+show top 10 budget by performance.,sql_mode
+Display suppliers data grouped by category.,sql_mode
+predict all customers from last quarter.,sql_mode
+I'd like to get marketing for each branch.,sql_mode
+explain all transactions from last quarter.,sql_mode
+Can you explain the transactions for this month?,sql_mode
+show top 10 marketing by performance.,sql_mode
+Please list overall customers trends.,sql_mode
+get all inventory from last quarter.,sql_mode
+Can you plot the regions for this month?,sql_mode
+Find conversion rate by country and department.,sql_mode
+Display marketing data grouped by category.,sql_mode
+explain me total website traffic by region.,sql_mode
+Please predict overall customers trends.,sql_mode
+I'd like to visualize profit for each branch.,sql_mode
+Find production costs by country and department.,sql_mode
+explain me total forecast by region.,sql_mode
+get all production costs from last quarter.,sql_mode
+get me total website traffic by region.,sql_mode
+compare me total transactions by region.,sql_mode
+I'd like to explain revenue for each branch.,sql_mode
+Please explain overall shipments trends.,sql_mode
+analyze top 10 regions by performance.,sql_mode
+fetch top 10 revenue by performance.,sql_mode
+predict me total inventory by region.,sql_mode
+visualize all inventory from last quarter.,sql_mode
+Find website traffic by country and department.,sql_mode
+Please list overall expenses trends.,sql_mode
+get top 10 growth by performance.,sql_mode
+Please fetch overall expenses trends.,sql_mode
+I'd like to show expenses for each branch.,sql_mode
+Please compare overall forecast trends.,sql_mode
+Display growth data grouped by category.,sql_mode
+Display expenses data grouped by category.,sql_mode
+Find forecast by country and department.,sql_mode
+explain top 10 conversion rate by performance.,sql_mode
+Display shipments data grouped by category.,sql_mode
+I'd like to list expenses for each branch.,sql_mode
+Find budget by country and department.,sql_mode
+Please analyze overall orders trends.,sql_mode
+Find leads by country and department.,sql_mode
+Display inventory data grouped by category.,sql_mode
+explain all growth from last quarter.,sql_mode
+I'd like to visualize expenses for each branch.,sql_mode
+predict top 10 sales by performance.,sql_mode
+Find revenue by country and department.,sql_mode
+Display orders data grouped by category.,sql_mode
+get top 10 forecast by performance.,sql_mode
+I'd like to predict budget for each branch.,sql_mode
+show top 10 inventory by performance.,sql_mode
+Can you plot the website traffic for this month?,sql_mode
+show all shipments from last quarter.,sql_mode
+get top 10 production costs by performance.,sql_mode
+show me total transactions by region.,sql_mode
+Display orders data grouped by category.,sql_mode
+visualize me total budget by region.,sql_mode
+Find expenses by country and department.,sql_mode
+predict me total revenue by region.,sql_mode
+Can you list the orders for this month?,sql_mode
+Display suppliers data grouped by category.,sql_mode
+Please predict overall profit trends.,sql_mode
+Please get overall profit trends.,sql_mode
+I'd like to list inventory for each branch.,sql_mode
+analyze all sales from last quarter.,sql_mode
+Find revenue by country and department.,sql_mode
+Find sales by country and department.,sql_mode
+Find production costs by country and department.,sql_mode
+Please visualize overall website traffic trends.,sql_mode
+list top 10 shipments by performance.,sql_mode
+fetch top 10 forecast by performance.,sql_mode
+compare me total profit by region.,sql_mode
+Can you visualize the forecast for this month?,sql_mode
+show me total customers by region.,sql_mode
+I'd like to list shipments for each branch.,sql_mode
+Display customers data grouped by category.,sql_mode
+fetch me total forecast by region.,sql_mode
+Find marketing by country and department.,sql_mode
+Find regions by country and department.,sql_mode
+Display budget data grouped by category.,sql_mode
+Find profit by country and department.,sql_mode
+Can you predict the suppliers for this month?,sql_mode
+fetch me total forecast by region.,sql_mode
+Find profit by country and department.,sql_mode
+Please visualize overall conversion rate trends.,sql_mode
+I'd like to visualize suppliers for each branch.,sql_mode
+I'd like to compare suppliers for each branch.,sql_mode
+Please show overall regions trends.,sql_mode
+fetch top 10 expenses by performance.,sql_mode
+Can you fetch the production costs for this month?,sql_mode
+list me total leads by region.,sql_mode
+fetch top 10 regions by performance.,sql_mode
+Can you explain the production costs for this month?,sql_mode
+show top 10 budget by performance.,sql_mode
+get top 10 production costs by performance.,sql_mode
+Please get overall inventory trends.,sql_mode
+explain me total suppliers by region.,sql_mode
+compare me total growth by region.,sql_mode
+Please fetch overall website traffic trends.,sql_mode
+I'd like to plot forecast for each branch.,sql_mode
+Can you list the budget for this month?,sql_mode
+Please fetch overall revenue trends.,sql_mode
+Please fetch overall production costs trends.,sql_mode
+Please compare overall website traffic trends.,sql_mode
+Can you explain the website traffic for this month?,sql_mode
+visualize top 10 transactions by performance.,sql_mode
+Please analyze overall suppliers trends.,sql_mode
+Find revenue by country and department.,sql_mode
+Please list overall expenses trends.,sql_mode
+Display revenue data grouped by category.,sql_mode
+Please explain overall conversion rate trends.,sql_mode
+I'd like to get regions for each branch.,sql_mode
+plot top 10 growth by performance.,sql_mode
+Can you plot the forecast for this month?,sql_mode
+I'd like to plot marketing for each branch.,sql_mode
+Please explain overall growth trends.,sql_mode
+explain me total budget by region.,sql_mode
+Display shipments data grouped by category.,sql_mode
+Please plot overall marketing trends.,sql_mode
+Find leads by country and department.,sql_mode
+show me total sales by region.,sql_mode
+analyze all customers from last quarter.,sql_mode
+get me total website traffic by region.,sql_mode
+Display conversion rate data grouped by category.,sql_mode
+Can you explain the production costs for this month?,sql_mode
+Can you compare the transactions for this month?,sql_mode
+Please plot overall expenses trends.,sql_mode
+Please plot overall suppliers trends.,sql_mode
+show all forecast from last quarter.,sql_mode
+Display expenses data grouped by category.,sql_mode
+fetch me total regions by region.,sql_mode
+I'd like to explain profit for each branch.,sql_mode
+Please compare overall growth trends.,sql_mode
+Can you show the orders for this month?,sql_mode
+get top 10 leads by performance.,sql_mode
+visualize me total expenses by region.,sql_mode
+Find profit by country and department.,sql_mode
+list me total revenue by region.,sql_mode
+Display regions data grouped by category.,sql_mode
+analyze me total conversion rate by region.,sql_mode
+I'd like to analyze suppliers for each branch.,sql_mode
+Display shipments data grouped by category.,sql_mode
+Please list overall sales trends.,sql_mode
+analyze top 10 regions by performance.,sql_mode
+Find orders by country and department.,sql_mode
+Find forecast by country and department.,sql_mode
+compare all regions from last quarter.,sql_mode
+fetch all profit from last quarter.,sql_mode
+plot me total forecast by region.,sql_mode
+compare all marketing from last quarter.,sql_mode
+plot all expenses from last quarter.,sql_mode
+Please predict overall inventory trends.,sql_mode
+Please fetch overall website traffic trends.,sql_mode
+I'd like to analyze forecast for each branch.,sql_mode
+Display forecast data grouped by category.,sql_mode
+Please get overall marketing trends.,sql_mode
+plot top 10 suppliers by performance.,sql_mode
+Find profit by country and department.,sql_mode
+get top 10 marketing by performance.,sql_mode
+I'd like to explain suppliers for each branch.,sql_mode
+Find forecast by country and department.,sql_mode
+Can you compare the customers for this month?,sql_mode
+Find revenue by country and department.,sql_mode
+Find forecast by country and department.,sql_mode
+Find leads by country and department.,sql_mode
+list top 10 suppliers by performance.,sql_mode
+Find revenue by country and department.,sql_mode
+show top 10 transactions by performance.,sql_mode
+Find expenses by country and department.,sql_mode
+Display leads data grouped by category.,sql_mode
+predict me total customers by region.,sql_mode
+list top 10 suppliers by performance.,sql_mode
+Can you compare the growth for this month?,sql_mode
+visualize me total orders by region.,sql_mode
+Display growth data grouped by category.,sql_mode
+get top 10 conversion rate by performance.,sql_mode
+Please visualize overall leads trends.,sql_mode
+Please explain overall sales trends.,sql_mode
+Display profit data grouped by category.,sql_mode
