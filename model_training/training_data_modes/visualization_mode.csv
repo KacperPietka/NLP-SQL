@@ -1,0 +1,201 @@
+text,label
+Can you create a heatmap for forecast?,visualization_mode
+Plot regions trends for the past year.,visualization_mode
+Plot a line graph of inventory over time.,visualization_mode
+I'd like to see customers visualized as a scatter plot.,visualization_mode
+Can you create a heatmap for customers?,visualization_mode
+Visualize expenses as a bar chart.,visualization_mode
+I'd like to see forecast visualized as a scatter plot.,visualization_mode
+Visualize profit as a bar chart.,visualization_mode
+Plot a line graph of transactions over time.,visualization_mode
+Visualize customers as a bar chart.,visualization_mode
+Visualize marketing as a bar chart.,visualization_mode
+Plot a line graph of orders over time.,visualization_mode
+Display orders in a dashboard view.,visualization_mode
+Plot suppliers trends for the past year.,visualization_mode
+Can you create a heatmap for production costs?,visualization_mode
+Show me a pie chart of transactions by region.,visualization_mode
+Make a histogram of regions distribution.,visualization_mode
+Can you create a heatmap for website traffic?,visualization_mode
+I'd like to see suppliers visualized as a scatter plot.,visualization_mode
+Display shipments in a dashboard view.,visualization_mode
+I'd like to see growth visualized as a scatter plot.,visualization_mode
+Display marketing in a dashboard view.,visualization_mode
+Show me a pie chart of transactions by region.,visualization_mode
+I'd like to see profit visualized as a scatter plot.,visualization_mode
+Display conversion rate in a dashboard view.,visualization_mode
+Make a histogram of conversion rate distribution.,visualization_mode
+Show me a pie chart of shipments by region.,visualization_mode
+Display shipments in a dashboard view.,visualization_mode
+Plot conversion rate trends for the past year.,visualization_mode
+Can you create a heatmap for sales?,visualization_mode
+Show me a pie chart of marketing by region.,visualization_mode
+Display budget in a dashboard view.,visualization_mode
+Plot a line graph of conversion rate over time.,visualization_mode
+Plot regions trends for the past year.,visualization_mode
+Can you create a heatmap for transactions?,visualization_mode
+Plot expenses trends for the past year.,visualization_mode
+I'd like to see sales visualized as a scatter plot.,visualization_mode
+Plot a line graph of suppliers over time.,visualization_mode
+Display transactions in a dashboard view.,visualization_mode
+Plot a line graph of regions over time.,visualization_mode
+Make a histogram of orders distribution.,visualization_mode
+Plot transactions trends for the past year.,visualization_mode
+Visualize shipments as a bar chart.,visualization_mode
+Plot suppliers trends for the past year.,visualization_mode
+Make a histogram of revenue distribution.,visualization_mode
+Display production costs in a dashboard view.,visualization_mode
+Plot a line graph of budget over time.,visualization_mode
+I'd like to see marketing visualized as a scatter plot.,visualization_mode
+Make a histogram of customers distribution.,visualization_mode
+Show me a pie chart of inventory by region.,visualization_mode
+Can you create a heatmap for sales?,visualization_mode
+I'd like to see regions visualized as a scatter plot.,visualization_mode
+Make a histogram of customers distribution.,visualization_mode
+Display revenue in a dashboard view.,visualization_mode
+Plot a line graph of budget over time.,visualization_mode
+Can you create a heatmap for transactions?,visualization_mode
+I'd like to see leads visualized as a scatter plot.,visualization_mode
+Plot a line graph of forecast over time.,visualization_mode
+Visualize expenses as a bar chart.,visualization_mode
+I'd like to see sales visualized as a scatter plot.,visualization_mode
+Visualize profit as a bar chart.,visualization_mode
+Visualize growth as a bar chart.,visualization_mode
+Make a histogram of profit distribution.,visualization_mode
+Plot forecast trends for the past year.,visualization_mode
+Plot a line graph of shipments over time.,visualization_mode
+Can you create a heatmap for sales?,visualization_mode
+I'd like to see customers visualized as a scatter plot.,visualization_mode
+Make a histogram of leads distribution.,visualization_mode
+Visualize marketing as a bar chart.,visualization_mode
+Show me a pie chart of revenue by region.,visualization_mode
+Make a histogram of growth distribution.,visualization_mode
+I'd like to see inventory visualized as a scatter plot.,visualization_mode
+Plot a line graph of shipments over time.,visualization_mode
+Can you create a heatmap for marketing?,visualization_mode
+Plot a line graph of production costs over time.,visualization_mode
+Plot a line graph of growth over time.,visualization_mode
+Display budget in a dashboard view.,visualization_mode
+Can you create a heatmap for orders?,visualization_mode
+Visualize shipments as a bar chart.,visualization_mode
+I'd like to see revenue visualized as a scatter plot.,visualization_mode
+Plot growth trends for the past year.,visualization_mode
+Visualize growth as a bar chart.,visualization_mode
+Show me a pie chart of forecast by region.,visualization_mode
+Make a histogram of leads distribution.,visualization_mode
+Display revenue in a dashboard view.,visualization_mode
+I'd like to see transactions visualized as a scatter plot.,visualization_mode
+I'd like to see conversion rate visualized as a scatter plot.,visualization_mode
+Show me a pie chart of forecast by region.,visualization_mode
+Display website traffic in a dashboard view.,visualization_mode
+Display budget in a dashboard view.,visualization_mode
+Plot a line graph of regions over time.,visualization_mode
+Show me a pie chart of conversion rate by region.,visualization_mode
+Display inventory in a dashboard view.,visualization_mode
+Can you create a heatmap for growth?,visualization_mode
+Can you create a heatmap for budget?,visualization_mode
+Show me a pie chart of customers by region.,visualization_mode
+Show me a pie chart of transactions by region.,visualization_mode
+Plot leads trends for the past year.,visualization_mode
+Plot sales trends for the past year.,visualization_mode
+Make a histogram of shipments distribution.,visualization_mode
+Plot a line graph of forecast over time.,visualization_mode
+Display production costs in a dashboard view.,visualization_mode
+Make a histogram of suppliers distribution.,visualization_mode
+Show me a pie chart of revenue by region.,visualization_mode
+Make a histogram of suppliers distribution.,visualization_mode
+Make a histogram of leads distribution.,visualization_mode
+Make a histogram of profit distribution.,visualization_mode
+I'd like to see transactions visualized as a scatter plot.,visualization_mode
+Visualize inventory as a bar chart.,visualization_mode
+Make a histogram of leads distribution.,visualization_mode
+Plot a line graph of leads over time.,visualization_mode
+Make a histogram of regions distribution.,visualization_mode
+I'd like to see expenses visualized as a scatter plot.,visualization_mode
+Show me a pie chart of shipments by region.,visualization_mode
+Can you create a heatmap for website traffic?,visualization_mode
+I'd like to see sales visualized as a scatter plot.,visualization_mode
+Make a histogram of orders distribution.,visualization_mode
+I'd like to see inventory visualized as a scatter plot.,visualization_mode
+Display suppliers in a dashboard view.,visualization_mode
+Plot a line graph of website traffic over time.,visualization_mode
+Plot regions trends for the past year.,visualization_mode
+Visualize transactions as a bar chart.,visualization_mode
+Show me a pie chart of shipments by region.,visualization_mode
+Make a histogram of growth distribution.,visualization_mode
+Plot orders trends for the past year.,visualization_mode
+Show me a pie chart of suppliers by region.,visualization_mode
+Show me a pie chart of regions by region.,visualization_mode
+I'd like to see shipments visualized as a scatter plot.,visualization_mode
+Visualize forecast as a bar chart.,visualization_mode
+Plot orders trends for the past year.,visualization_mode
+Make a histogram of forecast distribution.,visualization_mode
+Plot a line graph of marketing over time.,visualization_mode
+Plot a line graph of sales over time.,visualization_mode
+Plot growth trends for the past year.,visualization_mode
+Visualize marketing as a bar chart.,visualization_mode
+Can you create a heatmap for leads?,visualization_mode
+Display orders in a dashboard view.,visualization_mode
+Can you create a heatmap for profit?,visualization_mode
+Show me a pie chart of budget by region.,visualization_mode
+Plot customers trends for the past year.,visualization_mode
+Visualize transactions as a bar chart.,visualization_mode
+I'd like to see customers visualized as a scatter plot.,visualization_mode
+Visualize website traffic as a bar chart.,visualization_mode
+Make a histogram of regions distribution.,visualization_mode
+Plot production costs trends for the past year.,visualization_mode
+Make a histogram of website traffic distribution.,visualization_mode
+I'd like to see profit visualized as a scatter plot.,visualization_mode
+Can you create a heatmap for profit?,visualization_mode
+Display forecast in a dashboard view.,visualization_mode
+Plot a line graph of suppliers over time.,visualization_mode
+Show me a pie chart of leads by region.,visualization_mode
+Plot revenue trends for the past year.,visualization_mode
+Make a histogram of growth distribution.,visualization_mode
+Can you create a heatmap for regions?,visualization_mode
+Make a histogram of inventory distribution.,visualization_mode
+Can you create a heatmap for website traffic?,visualization_mode
+I'd like to see budget visualized as a scatter plot.,visualization_mode
+Display marketing in a dashboard view.,visualization_mode
+Make a histogram of conversion rate distribution.,visualization_mode
+Show me a pie chart of expenses by region.,visualization_mode
+Display production costs in a dashboard view.,visualization_mode
+Visualize marketing as a bar chart.,visualization_mode
+Show me a pie chart of production costs by region.,visualization_mode
+Show me a pie chart of profit by region.,visualization_mode
+Can you create a heatmap for shipments?,visualization_mode
+I'd like to see regions visualized as a scatter plot.,visualization_mode
+Display production costs in a dashboard view.,visualization_mode
+Show me a pie chart of expenses by region.,visualization_mode
+Plot orders trends for the past year.,visualization_mode
+Show me a pie chart of regions by region.,visualization_mode
+Visualize marketing as a bar chart.,visualization_mode
+Visualize production costs as a bar chart.,visualization_mode
+Show me a pie chart of production costs by region.,visualization_mode
+Show me a pie chart of expenses by region.,visualization_mode
+I'd like to see customers visualized as a scatter plot.,visualization_mode
+Plot a line graph of customers over time.,visualization_mode
+Plot shipments trends for the past year.,visualization_mode
+I'd like to see conversion rate visualized as a scatter plot.,visualization_mode
+Display revenue in a dashboard view.,visualization_mode
+Can you create a heatmap for shipments?,visualization_mode
+Plot revenue trends for the past year.,visualization_mode
+Visualize regions as a bar chart.,visualization_mode
+Visualize budget as a bar chart.,visualization_mode
+Plot sales trends for the past year.,visualization_mode
+Show me a pie chart of inventory by region.,visualization_mode
+Plot revenue trends for the past year.,visualization_mode
+Plot marketing trends for the past year.,visualization_mode
+Plot a line graph of leads over time.,visualization_mode
+Plot inventory trends for the past year.,visualization_mode
+Display orders in a dashboard view.,visualization_mode
+Make a histogram of revenue distribution.,visualization_mode
+Make a histogram of inventory distribution.,visualization_mode
+Can you create a heatmap for profit?,visualization_mode
+I'd like to see profit visualized as a scatter plot.,visualization_mode
+Can you create a heatmap for sales?,visualization_mode
+Make a histogram of production costs distribution.,visualization_mode
+Make a histogram of leads distribution.,visualization_mode
+Display shipments in a dashboard view.,visualization_mode
+Plot a line graph of sales over time.,visualization_mode
+Visualize sales as a bar chart.,visualization_mode

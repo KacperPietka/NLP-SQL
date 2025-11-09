@@ -12,6 +12,7 @@ from SQL_EXECUTE import execute_sql_query
 from SQL_Result_explainer import SQLResultExplainer
 from Snowflake_connector import SnowflakeConnectWindow
 from embedding_schema import ChromaSchemaManager
+from conversation_memory import ChatMemory
 
 
 class ChatWindow(QWidget):
@@ -20,6 +21,7 @@ class ChatWindow(QWidget):
         self.setWindowTitle("SQL-NLP Chat")
         self.resize(800, 600)
         self.schema_manager = ChromaSchemaManager()
+        self.chat_memory = ChatMemory()
 
         # Layouts
         main_layout = QHBoxLayout()
@@ -174,6 +176,8 @@ class ChatWindow(QWidget):
             clean_sql = escape(sql_query)
             clean_explanation = escape(interpretation)
 
+            self.chat_memory.add_memory(question,sql_query,results_of_the_query,interpretation)
+
              # --- USER MESSAGE (right aligned) ---
             cursor = self.chat_display.textCursor()
             user_format = QTextBlockFormat()
@@ -194,7 +198,3 @@ class ChatWindow(QWidget):
 
         except Exception as e:
             self.chat_display.append(f"<b>Assistant:</b> ❌ Error: {str(e)}")
-
-
-
-        

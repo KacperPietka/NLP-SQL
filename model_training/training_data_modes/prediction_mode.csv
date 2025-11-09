@@ -1,0 +1,201 @@
+text,label
+Give me a prediction of future budget.,prediction_mode
+Can you forecast profit based on historical data?,prediction_mode
+Give me a prediction of future customers.,prediction_mode
+Predict next month’s leads.,prediction_mode
+Give me a prediction of future transactions.,prediction_mode
+Project next quarter’s budget performance.,prediction_mode
+Project next quarter’s regions performance.,prediction_mode
+Forecast forecast for the next quarter.,prediction_mode
+Project next quarter’s budget performance.,prediction_mode
+Can you forecast budget based on historical data?,prediction_mode
+Can you forecast revenue based on historical data?,prediction_mode
+Can you forecast orders based on historical data?,prediction_mode
+Estimate how suppliers will evolve in the next 6 months.,prediction_mode
+Project next quarter’s revenue performance.,prediction_mode
+Forecast revenue for the next quarter.,prediction_mode
+Project next quarter’s inventory performance.,prediction_mode
+Can you forecast regions based on historical data?,prediction_mode
+Project next quarter’s revenue performance.,prediction_mode
+Can you forecast customers based on historical data?,prediction_mode
+Give me a prediction of future customers.,prediction_mode
+Give me a prediction of future inventory.,prediction_mode
+Can you forecast orders based on historical data?,prediction_mode
+Can you forecast budget based on historical data?,prediction_mode
+Can you forecast growth based on historical data?,prediction_mode
+Forecast revenue for the next quarter.,prediction_mode
+Can you forecast conversion rate based on historical data?,prediction_mode
+Give me a prediction of future leads.,prediction_mode
+Project next quarter’s transactions performance.,prediction_mode
+Give me a prediction of future revenue.,prediction_mode
+Forecast forecast for the next quarter.,prediction_mode
+Show expected expenses for next year.,prediction_mode
+Can you forecast leads based on historical data?,prediction_mode
+Forecast website traffic for the next quarter.,prediction_mode
+Predict next month’s customers.,prediction_mode
+Project next quarter’s website traffic performance.,prediction_mode
+Predict next month’s customers.,prediction_mode
+Give me a prediction of future budget.,prediction_mode
+Forecast sales for the next quarter.,prediction_mode
+Project next quarter’s customers performance.,prediction_mode
+Forecast regions for the next quarter.,prediction_mode
+Forecast expenses for the next quarter.,prediction_mode
+Forecast sales for the next quarter.,prediction_mode
+Give me a prediction of future customers.,prediction_mode
+Estimate future transactions values using trends.,prediction_mode
+Predict next month’s inventory.,prediction_mode
+Show expected regions for next year.,prediction_mode
+Give me a prediction of future conversion rate.,prediction_mode
+Estimate how sales will evolve in the next 6 months.,prediction_mode
+Estimate how budget will evolve in the next 6 months.,prediction_mode
+Forecast inventory for the next quarter.,prediction_mode
+Estimate how suppliers will evolve in the next 6 months.,prediction_mode
+Estimate how inventory will evolve in the next 6 months.,prediction_mode
+Estimate how regions will evolve in the next 6 months.,prediction_mode
+Project next quarter’s suppliers performance.,prediction_mode
+Can you forecast customers based on historical data?,prediction_mode
+Forecast production costs for the next quarter.,prediction_mode
+Project next quarter’s marketing performance.,prediction_mode
+Project next quarter’s growth performance.,prediction_mode
+Show expected sales for next year.,prediction_mode
+Forecast sales for the next quarter.,prediction_mode
+Show expected website traffic for next year.,prediction_mode
+Give me a prediction of future website traffic.,prediction_mode
+Predict next month’s forecast.,prediction_mode
+Give me a prediction of future website traffic.,prediction_mode
+Estimate future customers values using trends.,prediction_mode
+Show expected suppliers for next year.,prediction_mode
+Forecast revenue for the next quarter.,prediction_mode
+Can you forecast conversion rate based on historical data?,prediction_mode
+Predict next month’s growth.,prediction_mode
+Estimate how forecast will evolve in the next 6 months.,prediction_mode
+Show expected revenue for next year.,prediction_mode
+Give me a prediction of future conversion rate.,prediction_mode
+Project next quarter’s transactions performance.,prediction_mode
+Give me a prediction of future shipments.,prediction_mode
+Estimate future orders values using trends.,prediction_mode
+Give me a prediction of future inventory.,prediction_mode
+Can you forecast shipments based on historical data?,prediction_mode
+Project next quarter’s orders performance.,prediction_mode
+Estimate how transactions will evolve in the next 6 months.,prediction_mode
+Can you forecast leads based on historical data?,prediction_mode
+Predict next month’s regions.,prediction_mode
+Estimate future profit values using trends.,prediction_mode
+Show expected revenue for next year.,prediction_mode
+Show expected website traffic for next year.,prediction_mode
+Forecast inventory for the next quarter.,prediction_mode
+Forecast inventory for the next quarter.,prediction_mode
+Estimate how budget will evolve in the next 6 months.,prediction_mode
+Estimate future orders values using trends.,prediction_mode
+Project next quarter’s customers performance.,prediction_mode
+Can you forecast leads based on historical data?,prediction_mode
+Predict next month’s conversion rate.,prediction_mode
+Project next quarter’s suppliers performance.,prediction_mode
+Estimate how sales will evolve in the next 6 months.,prediction_mode
+Estimate future website traffic values using trends.,prediction_mode
+Forecast production costs for the next quarter.,prediction_mode
+Predict next month’s growth.,prediction_mode
+Estimate future inventory values using trends.,prediction_mode
+Forecast customers for the next quarter.,prediction_mode
+Show expected production costs for next year.,prediction_mode
+Forecast suppliers for the next quarter.,prediction_mode
+Can you forecast marketing based on historical data?,prediction_mode
+Predict next month’s budget.,prediction_mode
+Forecast orders for the next quarter.,prediction_mode
+Estimate future expenses values using trends.,prediction_mode
+Project next quarter’s website traffic performance.,prediction_mode
+Show expected forecast for next year.,prediction_mode
+Give me a prediction of future forecast.,prediction_mode
+Can you forecast marketing based on historical data?,prediction_mode
+Show expected conversion rate for next year.,prediction_mode
+Can you forecast revenue based on historical data?,prediction_mode
+Can you forecast suppliers based on historical data?,prediction_mode
+Estimate how shipments will evolve in the next 6 months.,prediction_mode
+Can you forecast expenses based on historical data?,prediction_mode
+Project next quarter’s budget performance.,prediction_mode
+Estimate future sales values using trends.,prediction_mode
+Estimate future growth values using trends.,prediction_mode
+Estimate how profit will evolve in the next 6 months.,prediction_mode
+Show expected website traffic for next year.,prediction_mode
+Can you forecast website traffic based on historical data?,prediction_mode
+Can you forecast budget based on historical data?,prediction_mode
+Project next quarter’s budget performance.,prediction_mode
+Predict next month’s marketing.,prediction_mode
+Estimate how budget will evolve in the next 6 months.,prediction_mode
+Can you forecast marketing based on historical data?,prediction_mode
+Predict next month’s sales.,prediction_mode
+Show expected conversion rate for next year.,prediction_mode
+Forecast leads for the next quarter.,prediction_mode
+Give me a prediction of future marketing.,prediction_mode
+Show expected growth for next year.,prediction_mode
+Predict next month’s leads.,prediction_mode
+Predict next month’s revenue.,prediction_mode
+Estimate how expenses will evolve in the next 6 months.,prediction_mode
+Give me a prediction of future budget.,prediction_mode
+Show expected inventory for next year.,prediction_mode
+Predict next month’s transactions.,prediction_mode
+Give me a prediction of future conversion rate.,prediction_mode
+Project next quarter’s profit performance.,prediction_mode
+Estimate future conversion rate values using trends.,prediction_mode
+Estimate how profit will evolve in the next 6 months.,prediction_mode
+Can you forecast transactions based on historical data?,prediction_mode
+Can you forecast conversion rate based on historical data?,prediction_mode
+Project next quarter’s shipments performance.,prediction_mode
+Give me a prediction of future transactions.,prediction_mode
+Estimate how shipments will evolve in the next 6 months.,prediction_mode
+Can you forecast leads based on historical data?,prediction_mode
+Show expected customers for next year.,prediction_mode
+Give me a prediction of future transactions.,prediction_mode
+Can you forecast conversion rate based on historical data?,prediction_mode
+Forecast revenue for the next quarter.,prediction_mode
+Project next quarter’s production costs performance.,prediction_mode
+Give me a prediction of future website traffic.,prediction_mode
+Can you forecast profit based on historical data?,prediction_mode
+Estimate how customers will evolve in the next 6 months.,prediction_mode
+Estimate future shipments values using trends.,prediction_mode
+Predict next month’s customers.,prediction_mode
+Predict next month’s customers.,prediction_mode
+Estimate future profit values using trends.,prediction_mode
+Can you forecast orders based on historical data?,prediction_mode
+Show expected revenue for next year.,prediction_mode
+Can you forecast marketing based on historical data?,prediction_mode
+Estimate future revenue values using trends.,prediction_mode
+Give me a prediction of future conversion rate.,prediction_mode
+Forecast expenses for the next quarter.,prediction_mode
+Predict next month’s shipments.,prediction_mode
+Give me a prediction of future leads.,prediction_mode
+Show expected growth for next year.,prediction_mode
+Estimate how regions will evolve in the next 6 months.,prediction_mode
+Project next quarter’s profit performance.,prediction_mode
+Show expected expenses for next year.,prediction_mode
+Estimate how budget will evolve in the next 6 months.,prediction_mode
+Can you forecast website traffic based on historical data?,prediction_mode
+Estimate future profit values using trends.,prediction_mode
+Estimate future inventory values using trends.,prediction_mode
+Forecast budget for the next quarter.,prediction_mode
+Estimate how inventory will evolve in the next 6 months.,prediction_mode
+Estimate future profit values using trends.,prediction_mode
+Project next quarter’s budget performance.,prediction_mode
+Give me a prediction of future leads.,prediction_mode
+Forecast production costs for the next quarter.,prediction_mode
+Can you forecast revenue based on historical data?,prediction_mode
+Can you forecast revenue based on historical data?,prediction_mode
+Show expected conversion rate for next year.,prediction_mode
+Show expected production costs for next year.,prediction_mode
+Forecast sales for the next quarter.,prediction_mode
+Predict next month’s sales.,prediction_mode
+Estimate how regions will evolve in the next 6 months.,prediction_mode
+Project next quarter’s suppliers performance.,prediction_mode
+Give me a prediction of future expenses.,prediction_mode
+Project next quarter’s revenue performance.,prediction_mode
+Project next quarter’s conversion rate performance.,prediction_mode
+Estimate how growth will evolve in the next 6 months.,prediction_mode
+Project next quarter’s inventory performance.,prediction_mode
+Show expected revenue for next year.,prediction_mode
+Estimate future customers values using trends.,prediction_mode
+Give me a prediction of future transactions.,prediction_mode
+Predict next month’s expenses.,prediction_mode
+Estimate future transactions values using trends.,prediction_mode
+Give me a prediction of future customers.,prediction_mode
+Predict next month’s marketing.,prediction_mode
+Estimate how suppliers will evolve in the next 6 months.,prediction_mode
