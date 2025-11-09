@@ -13,6 +13,7 @@ from SQL_Result_explainer import SQLResultExplainer
 from Snowflake_connector import SnowflakeConnectWindow
 from embedding_schema import ChromaSchemaManager
 from conversation_memory import ChatMemory
+from make_predictions import Prediction
 
 
 class ChatWindow(QWidget):
@@ -162,21 +163,31 @@ class ChatWindow(QWidget):
 
         self.input_bar.clear()
 
+        new_prediction = Prediction(question)
+        pred_id = new_prediction.predict()
+        prediction = new_prediction.decode(pred_id)
+        print(f"Predicted mode: {prediction}")
+
         try:
             context = self.schema_manager.get_context(question)
             schema = self.schema_manager.get_schema(question)
-            nl_to_sql_model = NLToSQLModel(question, schema, context)
-            sql_query = nl_to_sql_model.run() ### returns SQL query string
-
-            results_of_the_query = execute_sql_query(sql_query) ### returns JSON results
-
-            interpret_sql_model = SQLResultExplainer(question, sql_query, results_of_the_query, schema, context)
-            interpretation = interpret_sql_model.run() ### returns explanation string
-            
-            clean_sql = escape(sql_query)
-            clean_explanation = escape(interpretation)
-
-            self.chat_memory.add_memory(question,sql_query,results_of_the_query,interpretation)
+            if prediction == "sql_mode":
+                nl_to_sql_model = NLToSQLModel(question, schema, context)
+                sql_query = nl_to_sql_model.run() ### returns SQL query string
+                results_of_the_query = execute_sql_query(sql_query) ### returns JSON results
+                interpret_sql_model = SQLResultExplainer(question, sql_query, results_of_the_query, schema, context)
+                interpretation = interpret_sql_model.run() ### returns explanation string
+                clean_sql = escape(sql_query)
+                clean_explanation = escape(interpretation)
+                self.chat_memory.add_memory(question,sql_query,results_of_the_query,interpretation)
+            if prediction == "insight_mode":
+                memory = self.chat_memory.load_memory()
+                sql_query = memory[-1]["sql_query"]
+                results_of_the_query = memory[-1]["results"]
+                interpret_sql_model = SQLResultExplainer(question, sql_query, results_of_the_query, schema, context)
+                interpretation = interpret_sql_model.run() ### returns explanation string
+                clean_explanation = escape(interpretation)
+                self.chat_memory.add_memory(question,sql_query,results_of_the_query,interpretation)
 
              # --- USER MESSAGE (right aligned) ---
             cursor = self.chat_display.textCursor()

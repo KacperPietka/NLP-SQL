@@ -43,7 +43,3 @@ class ChatMemory:
         """Save the current memory list to disk."""
         with open(self.file_path, 'w', encoding='utf-8') as f:
             json.dump(self.conversation_memory, f, ensure_ascii=False, indent=4)
-        
-    def detect_mode(self, question) -> str:
-        # Call the ML classifier model!
-        pass
