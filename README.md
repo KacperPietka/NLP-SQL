@@ -1,6 +1,6 @@
 # Natural Language to SQL with Local LLMs  
 
-**SQL-NLP** lets you ask questions in plain English and get accurate SQL queries and insights by using **Ollama** and the **Mistral** model.  
+**DataChat** lets you ask questions in plain English and get accurate SQL queries and insights by using **Ollama** and the **Mistral** model.  
 The system retrieves relevant database schema information from **ChromaDB** and generates correct SQL that is executed. Additionally, you can get insights from the executed queries.  
 
 ## Features  
